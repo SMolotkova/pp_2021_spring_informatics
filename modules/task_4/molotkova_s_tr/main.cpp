@@ -25,17 +25,8 @@ TEST(Gauss_filter, 90x90) {
   auto rand_matrix = matrixCreation(rows, cols);
   auto matrix = transpose(rand_matrix, rows, cols);
   std::swap(cols, rows);
-  clock_t start = clock();
   auto matrix_seq = gaussFilter(matrix, rows, cols, 1, 5);
-  clock_t end = clock();
-  double seconds = (double)(end - start) / CLOCKS_PER_SEC;
-
-  clock_t start1 = clock();
   auto matrix_thr = gaussFilter_par(matrix, rows, cols, 1, 5);
-  clock_t end1 = clock();
-  double seconds1 = (double)(end1 - start1) / CLOCKS_PER_SEC;
-  std::cout << "Ses " << seconds << std::endl;
-  std::cout << "Parallel " << seconds1 << std::endl;
   ASSERT_EQ(matrix_seq, matrix_thr);
 }
 
