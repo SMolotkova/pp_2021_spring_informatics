@@ -20,28 +20,19 @@ TEST(Matrix_testing, invalid_argument2) {
 }
 
 TEST(Gauss_filter, 1300x1200) {
-  int rows = 9000;
-  int cols = 9000;
+  int rows = 90;
+  int cols = 90;
   auto rand_matrix = matrixCreation(rows, cols);
   auto matrix = transpose(rand_matrix, rows, cols);
   std::swap(cols, rows);
-  clock_t start = clock();
   auto matrix_seq = gaussFilter(matrix, rows, cols, 1, 5);
-  clock_t end = clock();
-  double seconds = (double)(end - start) / CLOCKS_PER_SEC;
-
-  clock_t start1 = clock();
   auto matrix_thr = gaussFilter_par(matrix, rows, cols, 1, 5);
-  clock_t end1 = clock();
-  double seconds1 = (double)(end1 - start1) / CLOCKS_PER_SEC;
-  std::cout << "Ses " << seconds << std::endl;
-  std::cout << "Parallel " << seconds1 << std::endl;
   ASSERT_EQ(matrix_seq, matrix_thr);
 }
 
 TEST(Gauss_filter, 2500x2500) {
-  int rows = 250;
-  int cols = 250;
+  int rows = 25;
+  int cols = 25;
   auto rand_matrix = matrixCreation(rows, cols);
   auto matrix = transpose(rand_matrix, rows, cols);
   std::swap(cols, rows);
@@ -51,8 +42,8 @@ TEST(Gauss_filter, 2500x2500) {
 }
 
 TEST(Gauss_filter, 1500x1700) {
-  int rows = 100;
-  int cols = 100;
+  int rows = 10;
+  int cols = 10;
   auto rand_matrix = matrixCreation(rows, cols);
   auto matrix = transpose(rand_matrix, rows, cols);
   std::swap(cols, rows);
@@ -63,8 +54,8 @@ TEST(Gauss_filter, 1500x1700) {
 }
 
 TEST(Gauss_filter, 100x1500) {
-  int rows = 10000;
-  int cols = 1005;
+  int rows = 10;
+  int cols = 15;
   auto rand_matrix = matrixCreation(rows, cols);
   auto matrix = transpose(rand_matrix, rows, cols);
   std::swap(cols, rows);
@@ -75,8 +66,8 @@ TEST(Gauss_filter, 100x1500) {
 }
 
 TEST(Gauss_filter, 15000x10000) {
-  int rows = 150;
-  int cols = 100;
+  int rows = 10;
+  int cols = 10;
   auto rand_matrix = matrixCreation(rows, cols);
   auto matrix = transpose(rand_matrix, rows, cols);
   std::swap(cols, rows);
