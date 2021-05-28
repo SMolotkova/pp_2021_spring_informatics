@@ -19,9 +19,9 @@ TEST(Matrix_testing, invalid_argument2) {
   ASSERT_ANY_THROW(matrixCreation(rows, cols));
 }
 
-TEST(Gauss_filter, 1300x1200) {
-  int rows = 9000;
-  int cols = 9000;
+TEST(Gauss_filter, 90x90) {
+  int rows = 90;
+  int cols = 90;
   auto rand_matrix = matrixCreation(rows, cols);
   auto matrix = transpose(rand_matrix, rows, cols);
   std::swap(cols, rows);
@@ -39,9 +39,9 @@ TEST(Gauss_filter, 1300x1200) {
   ASSERT_EQ(matrix_seq, matrix_thr);
 }
 
-TEST(Gauss_filter, 2500x2500) {
-  int rows = 250;
-  int cols = 250;
+TEST(Gauss_filter, 25x20) {
+  int rows = 25;
+  int cols = 20;
   auto rand_matrix = matrixCreation(rows, cols);
   auto matrix = transpose(rand_matrix, rows, cols);
   std::swap(cols, rows);
@@ -50,7 +50,7 @@ TEST(Gauss_filter, 2500x2500) {
   ASSERT_EQ(matrix_seq, matrix_thr);
 }
 
-TEST(Gauss_filter, 1500x1700) {
+TEST(Gauss_filter, 100x100) {
   int rows = 100;
   int cols = 100;
   auto rand_matrix = matrixCreation(rows, cols);
@@ -62,9 +62,9 @@ TEST(Gauss_filter, 1500x1700) {
   ASSERT_EQ(matrix_seq, matrix_thr);
 }
 
-TEST(Gauss_filter, 100x1500) {
-  int rows = 10000;
-  int cols = 1005;
+TEST(Gauss_filter, 10x15) {
+  int rows = 10;
+  int cols = 15;
   auto rand_matrix = matrixCreation(rows, cols);
   auto matrix = transpose(rand_matrix, rows, cols);
   std::swap(cols, rows);
@@ -74,9 +74,9 @@ TEST(Gauss_filter, 100x1500) {
   ASSERT_EQ(matrix_seq, matrix_thr);
 }
 
-TEST(Gauss_filter, 15000x10000) {
-  int rows = 150;
-  int cols = 100;
+TEST(Gauss_filter, 15x10) {
+  int rows = 15;
+  int cols = 10;
   auto rand_matrix = matrixCreation(rows, cols);
   auto matrix = transpose(rand_matrix, rows, cols);
   std::swap(cols, rows);
